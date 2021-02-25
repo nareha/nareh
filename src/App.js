@@ -1,10 +1,20 @@
-import './App.css';
+import React from "react";
+import { Switch, Route } from "react-router-dom"
+import Main from './Main.js';
+import Blog from './Blog.js';
 
 function App() {
   return (
-    <div className="App">
-      <p>Hello!</p>
-    </div>
+    <>
+      <Switch>
+        <Route exact path="/">
+            <Main />
+        </Route>
+        <Route path="/blog">
+          <Blog />
+        </Route>
+      </Switch>
+    </>
   );
 }
 

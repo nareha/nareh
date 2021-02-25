@@ -1,0 +1,31 @@
+.main {
+    text-align: center;
+    min-height: 100vh;
+    font-family: 'Mulish', sans-serif;
+    color: #7e8af2;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+    
+nav ul{
+    list-style: none;
+    margin: 2px;
+}
+    
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    font-weight: normal;
+    padding: 7px;
+    font-size: 18px;
+}
+
+a:visited {
+    color: #7e8af2;
+}

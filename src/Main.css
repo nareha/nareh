@@ -1,0 +1,12 @@
+.main {
+    text-align: center;
+    min-height: 100vh;
+    font-family: 'Mulish', sans-serif;
+    color: black;
+    font-size: 20px;
+    margin-top: 200px;
+}
+
+p {
+    color: #7e8af2;
+}
