@@ -1,0 +1,20 @@
+.App {
+    text-align: center;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(5px + 2vmin);
+    color: black;
+}
+
+.terminal-container {
+    /* Fake values just to view container, to be changed */
+    background-color: aliceblue;
+    border: 2px solid crimson;
+    border-radius: 5px;
+    padding: 10px;
+    size: 1vmax;
+}
