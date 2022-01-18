@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './styles/global.css';
+import Command from './components/Command';
 
 /* Art for display, to be added later */
 var ascii = [
@@ -19,9 +20,12 @@ var ascii = [
 function App() {
   /* Elementary testing of command input */
   const [inputValue, setInputValue] = useState<string>("");
+  const [boxValue, setBoxValue] = useState<string>("");
+  const [renderComponent, setRenderComponent] = useState<boolean>(false);
   const inputHandler = (event : React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      console.log("Command accepted")
+      setInputValue(boxValue);
+      setRenderComponent(true);
     }
   }
 
@@ -38,12 +42,13 @@ function App() {
         </pre>
         <input
           type="text"
-          value={inputValue}
+          value={boxValue}
           onKeyDown={inputHandler}
           onChange={(
             ev: React.ChangeEvent<HTMLInputElement>,
-          ): void => setInputValue(ev.target.value)}
-        />           
+          ): void => setBoxValue(ev.target.value)}
+        />
+        {renderComponent && <Command commandInput={inputValue} />}
       </div>
     </div>
   );
