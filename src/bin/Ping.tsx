@@ -5,5 +5,3 @@ export const Ping: FC = () => {
       <div>Pong!</div>
   );
 };
-
-export default Ping;

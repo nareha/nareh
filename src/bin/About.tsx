@@ -5,5 +5,3 @@ export const About: FC = () => {
       <div>My name is Nareh and I like to code!</div>
   );
 };
-
-export default About;

@@ -3,7 +3,7 @@ import './styles/global.css';
 import Command from './components/Command';
 
 /* Art for display, to be added later */
-var ascii = [
+const ascii = [
   "                                888",
   "                                888",
   "                                888",
