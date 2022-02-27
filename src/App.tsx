@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './styles/global.css';
 import Command from './components/Command';
 
-/* Art for display, to be added later */
+/* Art for display, to be added later
 const ascii = [
   "                                888",
   "                                888",
@@ -16,16 +16,50 @@ const ascii = [
   "                                888                   ",
   "                                888                   ",
 ].join('\n');
+*/
+
+let historyLocation = -1;
 
 function App() {
   /* Elementary testing of command input */
   const [inputValue, setInputValue] = useState<string>("");
   const [boxValue, setBoxValue] = useState<string>("");
   const [renderComponent, setRenderComponent] = useState<boolean>(false);
+
+  const [commandHistory, setCommandHistory] = useState<string[]>([]);
+
   const inputHandler = (event : React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (historyLocation === -1) {
+        return;
+      } else {
+        if (historyLocation === commandHistory.length) {
+          historyLocation--;
+        }
+        setBoxValue(commandHistory[historyLocation]);
+        if (historyLocation !== 0) {
+          historyLocation--;
+        }
+      }
+    } else if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      if (commandHistory.length - 1 === historyLocation) {
+        historyLocation++;
+        setBoxValue("");
+      } else if (historyLocation === commandHistory.length) {
+        return;
+      } else {
+        historyLocation++;
+        setBoxValue(commandHistory[historyLocation]);
+      }
+    } else if (event.key === 'Enter') {
+      historyLocation = commandHistory.length;
       setInputValue(boxValue);
       setRenderComponent(true);
+      let fullHistory = commandHistory.concat([boxValue]);
+      setCommandHistory(fullHistory);
+      setBoxValue("");
     }
   }
 
@@ -33,21 +67,25 @@ function App() {
     <div className="App">
       <div className="terminal-container">
         <p>
-          guest@nareh.io:~$ neofetch
+          $ introtext <br /> Welcome! The next line will begin the input field
         </p>
+        {/*<pre>*/}
+        {/*  <code>*/}
+        {/*    {ascii}*/}
+        {/*  </code>*/}
+        {/*</pre>*/}
         <pre>
-          <code>
-            {ascii}
-          </code>
+          {"$ "}
+          <input
+              className="text-field"
+              type="text"
+              value={boxValue}
+              onKeyDown={inputHandler}
+              onChange={(
+                  ev: React.ChangeEvent<HTMLInputElement>,
+              ): void => setBoxValue(ev.target.value)}
+          />
         </pre>
-        <input
-          type="text"
-          value={boxValue}
-          onKeyDown={inputHandler}
-          onChange={(
-            ev: React.ChangeEvent<HTMLInputElement>,
-          ): void => setBoxValue(ev.target.value)}
-        />
         {renderComponent && <Command commandInput={inputValue} />}
       </div>
     </div>

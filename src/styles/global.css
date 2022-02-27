@@ -1,20 +1,41 @@
+/* Color choices are based on Gruvbox */
+
 .App {
-    text-align: center;
-    background-color: #282c34;
+    background-color: #282828;
     min-height: 100vh;
+    font-size: 16px;
+    color: #fbf1c7;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    font-size: calc(5px + 2vmin);
-    color: black;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+    cursor: text;
 }
 
 .terminal-container {
-    /* Fake values just to view container, to be changed */
-    background-color: aliceblue;
-    border: 2px solid crimson;
+    position: fixed;
+    background-color: #282828;
+    border: 2px solid #fe8019;
     border-radius: 5px;
     padding: 10px;
-    size: 1vmax;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.text-field {
+    width: calc(100% - 200px);
+    border: none;
+    background-color: #282828;
+    font-size: 16px;
+    color: #fbf1c7;
+    overflow: auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
 }
