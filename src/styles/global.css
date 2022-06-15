@@ -10,7 +10,7 @@
     align-content: center;
     height: 100%;
     width: 100%;
-    cursor: text;
+    font-family: 'JetBrains Mono', serif;
 }
 
 .terminal-container {
@@ -23,14 +23,8 @@
     overflow: auto;
 }
 
-.prompt {
-    color: #76946A;
-    font-weight: bolder;
-    font-size: 18px;
-}
-
 .text-field {
-    width: calc(100% - 200px);
+    width: calc(100% - 250px);
     border: none;
     background-color: #1F1F28;
     font-size: 18px;
@@ -43,8 +37,15 @@
     -ms-user-select: none;
     user-select: none;
     outline: none;
+    font-family: 'JetBrains Mono', serif;
 }
 
 .command {
     padding: 10px;
+    margin: 10px;
+}
+
+::selection {
+    background: #76946A;
+    color: #1F1F28;
 }

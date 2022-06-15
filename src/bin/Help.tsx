@@ -1,8 +1,10 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import '../styles/global.css';
 
-export const About: FC = () => {
+export const Help: FC = () => {
   return (
-      <div className="command">My name is Nareh and I like to code!</div>
+      <div className="command">
+        Available commands: about, banner, bash, help, ping
+      </div>
   );
 };

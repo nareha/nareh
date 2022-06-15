@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import './styles/global.css';
 import Command from './components/Command';
 
+// For command history
 let historyLocation = -1;
 
+// For displayed all issued commands and outputs
 const history = [
   <Command commandInput="banner" />
 ];
@@ -39,9 +41,10 @@ function App() {
       }
     } else if (event.key === 'Enter') {
       historyLocation = commandHistory.length;
-      history.push(<div className="prompt">
-        guest@nareha.xyz:~$ {boxValue}
-      </div>)
+      history.push(
+          <div>
+            <span style={{ color:"#DCA561" }}>guest</span>@<span style={{ color:"#7E9CD8" }}>nareha.xyz</span>:~$ <span className="text-field">{boxValue}</span>
+          </div>)
       history.push(<Command commandInput={boxValue} />)
       let fullHistory = commandHistory.concat([boxValue]);
       setCommandHistory(fullHistory);
@@ -55,8 +58,8 @@ function App() {
         <div>
           {history.map(history => <div>{history}</div>)}
         </div>
-        <div className="prompt">
-          {"guest@nareha.xyz:~$ "}
+        <div>
+          <span style={{ color:"#DCA561" }}>guest</span>@<span style={{ color:"#7E9CD8" }}>nareha.xyz</span>:~$ {" "}
           <input
               className="text-field"
               type="text"

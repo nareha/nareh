@@ -4,6 +4,7 @@ import { About } from '../bin/About';
 import { Bash } from '../bin/Bash';
 import { Empty } from '../bin/Empty';
 import { Banner } from '../bin/Banner';
+import { Help } from '../bin/Help';
 import '../styles/global.css';
 
 interface CommandProps {
@@ -14,6 +15,8 @@ export const Command: FC<CommandProps> = ({ commandInput }) => {
     switch (commandInput) {
         case "":
             return <Empty />
+        case "help":
+            return <Help />
         case "ping":
             return <Ping />
         case "about":
@@ -24,7 +27,7 @@ export const Command: FC<CommandProps> = ({ commandInput }) => {
             return <Banner />
         default:
             return (
-                <div className="command">zsh: command not found: {commandInput}</div>
+                <div className="command">zsh: command not found: <span style={{ color:"#E82424" }}>{commandInput}</span></div>
             )
     }
 };
