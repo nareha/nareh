@@ -3,6 +3,7 @@ import { Ping } from '../bin/Ping';
 import { About } from '../bin/About';
 import { Bash } from '../bin/Bash';
 import { Empty } from '../bin/Empty';
+import { Banner } from '../bin/Banner';
 
 interface CommandProps {
     commandInput: string;
@@ -18,6 +19,8 @@ export const Command: FC<CommandProps> = ({ commandInput }) => {
             return <About />
         case "bash":
             return <Bash />
+        case "banner":
+            return <Banner />
         default:
             return (
                 <div>zsh: command not found: {commandInput}</div>

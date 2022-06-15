@@ -1,10 +1,10 @@
-/* Color choices are based on Gruvbox */
+/* Color choices are based on Kanagawa */
 
 .App {
-    background-color: #282828;
+    background-color: #1F1F28;
     min-height: 100vh;
     font-size: 16px;
-    color: #fbf1c7;
+    color: #DCD7BA;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -15,9 +15,7 @@
 
 .terminal-container {
     position: fixed;
-    background-color: #282828;
-    border: 2px solid #fe8019;
-    border-radius: 5px;
+    background-color: #1F1F28;
     padding: 10px;
     box-sizing: border-box;
     width: 100%;
@@ -28,9 +26,10 @@
 .text-field {
     width: calc(100% - 200px);
     border: none;
-    background-color: #282828;
+    background-color: #1F1F28;
     font-size: 16px;
-    color: #fbf1c7;
+    font-weight: bold;
+    color: #76946A;
     overflow: auto;
     -webkit-touch-callout: none;
     -webkit-user-select: none;

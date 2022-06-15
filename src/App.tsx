@@ -2,30 +2,14 @@ import React, {useState} from 'react';
 import './styles/global.css';
 import Command from './components/Command';
 
-/* Art for display, to be added later
-const ascii = [
-  "                                888",
-  "                                888",
-  "                                888",
-  ".d8888b   8888b.  88888b.d88b. 88888b.  888  .d88b.",
-  "88K          \"88b 888 \"888 \"88b 888 \"88b 888 d8P  Y8b",
-  "\"Y8888b. .d888888 888  888  888 888  888 888 88888888",
-  "    X88 888  888 888  888  888 888 d88P 888 Y8b.   ",
-  "  88888P' \"Y888888 888  888  888 88888P\"  888  \"Y8888  ",
-  "                                888                   ",
-  "                                888                   ",
-  "                                888                   ",
-].join('\n');
-*/
-
 let historyLocation = -1;
 
-function App() {
-  /* Elementary testing of command input */
-  const [inputValue, setInputValue] = useState<string>("");
-  const [boxValue, setBoxValue] = useState<string>("");
-  const [renderComponent, setRenderComponent] = useState<boolean>(false);
+const history = [
+  <Command commandInput="banner" />
+];
 
+function App() {
+  const [boxValue, setBoxValue] = useState<string>("");
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
 
   const inputHandler = (event : React.KeyboardEvent<HTMLInputElement>) => {
@@ -55,8 +39,8 @@ function App() {
       }
     } else if (event.key === 'Enter') {
       historyLocation = commandHistory.length;
-      setInputValue(boxValue);
-      setRenderComponent(true);
+      history.push(<p>$ {boxValue}</p>)
+      history.push(<Command commandInput={boxValue} />)
       let fullHistory = commandHistory.concat([boxValue]);
       setCommandHistory(fullHistory);
       setBoxValue("");
@@ -66,14 +50,9 @@ function App() {
   return (
     <div className="App">
       <div className="terminal-container">
-        <p>
-          $ introtext <br /> Welcome! The next line will begin the input field
-        </p>
-        {/*<pre>*/}
-        {/*  <code>*/}
-        {/*    {ascii}*/}
-        {/*  </code>*/}
-        {/*</pre>*/}
+        <div>
+          {history.map(history => <div>{history}</div>)}
+        </div>
         <pre>
           {"$ "}
           <input
@@ -86,7 +65,6 @@ function App() {
               ): void => setBoxValue(ev.target.value)}
           />
         </pre>
-        {renderComponent && <Command commandInput={inputValue} />}
       </div>
     </div>
   );
