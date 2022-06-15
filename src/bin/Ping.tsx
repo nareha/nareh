@@ -1,7 +1,8 @@
 import { FC } from 'react';
+import '../styles/global.css';
 
 export const Ping: FC = () => {
   return (
-      <div>Pong!</div>
+      <div className="command">pong!</div>
   );
 };

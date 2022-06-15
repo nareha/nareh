@@ -39,7 +39,9 @@ function App() {
       }
     } else if (event.key === 'Enter') {
       historyLocation = commandHistory.length;
-      history.push(<p>$ {boxValue}</p>)
+      history.push(<div className="prompt">
+        guest@nareha.xyz:~$ {boxValue}
+      </div>)
       history.push(<Command commandInput={boxValue} />)
       let fullHistory = commandHistory.concat([boxValue]);
       setCommandHistory(fullHistory);
@@ -53,8 +55,8 @@ function App() {
         <div>
           {history.map(history => <div>{history}</div>)}
         </div>
-        <pre>
-          {"$ "}
+        <div className="prompt">
+          {"guest@nareha.xyz:~$ "}
           <input
               className="text-field"
               type="text"
@@ -64,7 +66,7 @@ function App() {
                   ev: React.ChangeEvent<HTMLInputElement>,
               ): void => setBoxValue(ev.target.value)}
           />
-        </pre>
+        </div>
       </div>
     </div>
   );

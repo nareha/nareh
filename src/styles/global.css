@@ -3,7 +3,7 @@
 .App {
     background-color: #1F1F28;
     min-height: 100vh;
-    font-size: 16px;
+    font-size: 18px;
     color: #DCD7BA;
     display: flex;
     justify-content: center;
@@ -23,11 +23,17 @@
     overflow: auto;
 }
 
+.prompt {
+    color: #76946A;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
 .text-field {
     width: calc(100% - 200px);
     border: none;
     background-color: #1F1F28;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     color: #76946A;
     overflow: auto;
@@ -37,4 +43,8 @@
     -ms-user-select: none;
     user-select: none;
     outline: none;
+}
+
+.command {
+    padding: 10px;
 }

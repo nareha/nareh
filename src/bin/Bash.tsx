@@ -1,7 +1,8 @@
 import { FC } from 'react';
+import '../styles/global.css';
 
 export const Bash: FC = () => {
     return (
-        <div>nope. zsh only here.</div>
+        <div className="command">nope. zsh only here.</div>
     );
 };

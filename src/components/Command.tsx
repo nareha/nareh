@@ -4,6 +4,7 @@ import { About } from '../bin/About';
 import { Bash } from '../bin/Bash';
 import { Empty } from '../bin/Empty';
 import { Banner } from '../bin/Banner';
+import '../styles/global.css';
 
 interface CommandProps {
     commandInput: string;
@@ -23,7 +24,7 @@ export const Command: FC<CommandProps> = ({ commandInput }) => {
             return <Banner />
         default:
             return (
-                <div>zsh: command not found: {commandInput}</div>
+                <div className="command">zsh: command not found: {commandInput}</div>
             )
     }
 };
