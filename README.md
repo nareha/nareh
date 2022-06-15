@@ -1,6 +1,10 @@
-# Website
-in-progress, but the idea is a terminal-style website
+# nareh | Terminal
+a terminal-style personal website.
 
-a "gui" version of the site will be available as well, but this is just me exploring a cool idea
+this website has plans to finish and deploy soon. thank you for your patience.
 
-6/15/2022: this website is resuming progress with plans to finish soon. thank you for your patience.
+### disclaimer
+in its current state, this is not the best code implementation for this website. the hope is to continuously update the site as i learn, and even possibly change technologies.
+
+### inspiration credits
+while the idea to make a website of this style was a personal one, inspiration for the implementation of this website comes from [Yassine Fathi](https://github.com/m4tt72/terminal). a youtuber i enjoy, [Forrest Knight](https://fkcodes.com/), also referenced Yassine's implementation, and i inevitably drew some inspiration from his implementation as well.
