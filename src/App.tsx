@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './styles/global.css';
 import Command from './components/Command';
 
@@ -15,6 +15,11 @@ function App() {
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
 
   const inputHandler = (event : React.KeyboardEvent<HTMLInputElement>) => {
+    window.scrollTo({
+      top: document.documentElement.scrollTop || document.body.scrollTop,
+      behavior: 'smooth'
+    });
+    // window.scrollTo(0, document.documentElement.scrollTop || document.body.scrollTop);
     if (event.key === 'ArrowUp') {
       event.preventDefault();
       if (historyLocation === -1) {
@@ -43,7 +48,7 @@ function App() {
       historyLocation = commandHistory.length;
       history.push(
           <div>
-            <span style={{ color:"#DCA561" }}>guest</span>@<span style={{ color:"#7E9CD8" }}>nareha.xyz</span>:~$ <span className="text-field">{boxValue}</span>
+            <span style={{ color:"#DCA561" }}>guest</span>@<span style={{ color:"#7E9CD8" }}>nareh.dev</span>:~$ <span className="text-field">{boxValue}</span>
           </div>)
       history.push(<Command commandInput={boxValue} />)
       let fullHistory = commandHistory.concat([boxValue]);
@@ -59,8 +64,9 @@ function App() {
           {history.map(history => <div>{history}</div>)}
         </div>
         <div>
-          <span style={{ color:"#DCA561" }}>guest</span>@<span style={{ color:"#7E9CD8" }}>nareha.xyz</span>:~$ {" "}
+          <span style={{ color:"#DCA561" }}>guest</span>@<span style={{ color:"#7E9CD8" }}>nareh.dev</span>:~$ {" "}
           <input
+              autoFocus
               className="text-field"
               type="text"
               value={boxValue}

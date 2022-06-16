@@ -17,7 +17,7 @@ const ascii = [
 
 export const Banner: FC = () => {
     return (
-        <div className="command">
+        <div>
             <div className="banner">
                 Beginning boot sequence...
             </div>

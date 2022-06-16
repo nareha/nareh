@@ -3,14 +3,16 @@
 .App {
     background-color: #1F1F28;
     min-height: 100vh;
-    font-size: 18px;
+    font-size: 17px;
     color: #DCD7BA;
     display: flex;
     justify-content: center;
     align-content: center;
     height: 100%;
     width: 100%;
-    font-family: 'JetBrains Mono', serif;
+    font-family: 'JetBrains Mono', monospace;
+    overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 .terminal-container {
@@ -20,32 +22,47 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: scroll;
+    scroll-behavior: smooth;
 }
 
 .text-field {
     width: calc(100% - 250px);
     border: none;
     background-color: #1F1F28;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     color: #76946A;
     overflow: auto;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     outline: none;
     font-family: 'JetBrains Mono', serif;
 }
 
 .command {
-    padding: 10px;
     margin: 10px;
 }
 
 ::selection {
     background: #76946A;
     color: #1F1F28;
+}
+
+a {
+    color: #76946A;
+}
+
+a:link {
+    color: #76946A;
+}
+
+a:visited {
+    color: #76946A;
+}
+
+a:hover {
+    color: #76946A;
+}
+
+a:active {
+    color: #76946A;
 }

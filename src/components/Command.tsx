@@ -5,6 +5,8 @@ import { Bash } from '../bin/Bash';
 import { Empty } from '../bin/Empty';
 import { Banner } from '../bin/Banner';
 import { Help } from '../bin/Help';
+import { Repo } from '../bin/Repo';
+import { FunFact } from '../bin/FunFact';
 import '../styles/global.css';
 
 interface CommandProps {
@@ -25,6 +27,10 @@ export const Command: FC<CommandProps> = ({ commandInput }) => {
             return <Bash />
         case "banner":
             return <Banner />
+        case "repo":
+            return <Repo />
+        case "funfact":
+            return <FunFact />
         default:
             return (
                 <div className="command">zsh: command not found: <span style={{ color:"#E82424" }}>{commandInput}</span></div>

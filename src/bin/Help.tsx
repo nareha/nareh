@@ -4,7 +4,7 @@ import '../styles/global.css';
 export const Help: FC = () => {
   return (
       <div className="command">
-        Available commands: about, banner, bash, help, ping
+        available commands: about, banner, bash, funfact, help, ping, repo
       </div>
   );
 };
