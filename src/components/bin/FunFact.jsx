@@ -1,5 +1,4 @@
-import { FC } from 'react';
-import '../styles/global.css';
+import '../../global.css';
 
 const facts = [
     "currently, my favorite color scheme is kanagawa and my favorite font is jetbrains mono.",
@@ -10,12 +9,11 @@ const facts = [
     "my favorite classes so far at ucla have been introductory sociology (SOCIOL 1), algorithms and complexity (COM SCI 180), data management systems (COM SCI 143), and computer network fundamentals (COM SCI 118).",
 ];
 
-export const FunFact: FC = () => {
-    const randomElement = facts[Math.floor(Math.random() * facts.length)];
-
+export const FunFact = () => {
+    const fact = facts[Math.floor(Math.random() * facts.length)];
     return (
         <div className="command">
-            {randomElement}
+            {fact}
         </div>
     );
 };

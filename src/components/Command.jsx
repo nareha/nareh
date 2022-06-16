@@ -1,19 +1,15 @@
-import React, { FC } from 'react';
-import { Ping } from '../bin/Ping';
-import { About } from '../bin/About';
-import { Bash } from '../bin/Bash';
-import { Empty } from '../bin/Empty';
-import { Banner } from '../bin/Banner';
-import { Help } from '../bin/Help';
-import { Repo } from '../bin/Repo';
-import { FunFact } from '../bin/FunFact';
-import '../styles/global.css';
+import React from 'react';
+import { Ping } from './bin/Ping';
+import { About } from './bin/About';
+import { Bash } from './bin/Bash';
+import { Empty } from './bin/Empty';
+import { Banner } from './bin/Banner';
+import { Help } from './bin/Help';
+import { Repo } from './bin/Repo';
+import { FunFact } from './bin/FunFact';
+import '../global.css';
 
-interface CommandProps {
-    commandInput: string;
-}
-
-export const Command: FC<CommandProps> = ({ commandInput }) => {
+export const Command = ({ commandInput }) => {
     switch (commandInput) {
         case "":
             return <Empty />
