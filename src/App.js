@@ -52,7 +52,7 @@ function App() {
       historyLocation = commandHistory.length;
       history.push(
           <div>
-            <span style={{ color:"#DCA561" }}>guest</span>@<span style={{ color:"#7E9CD8" }}>nareh.dev</span>:~$ <span className="text-field">{boxValue}</span>
+            <span style={{ color:"#DCA561" }}>guest</span>@<span style={{ color:"#7E9CD8" }}>nareh.dev</span>:~$ {" "} <span className="text-field">{boxValue}</span>
           </div>)
       history.push(<Command commandInput={boxValue} />)
       let fullHistory = commandHistory.concat([boxValue]);
