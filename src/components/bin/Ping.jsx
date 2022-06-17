@@ -1,5 +1,3 @@
-import '../../global.css';
-
 const pong = [
     "    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⢀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀",
     "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀",
@@ -20,8 +18,8 @@ const pong = [
 
 export const Ping = () => {
     return (
-        <div className="command">
-            <pre>
+        <div>
+            <pre style={{ color:"#76946A" }}>
               {pong}
             </pre>
             pong!

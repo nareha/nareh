@@ -1,8 +1,6 @@
 import React from 'react';
 import { Ping } from './bin/Ping';
 import { About } from './bin/About';
-import { Bash } from './bin/Bash';
-import { Empty } from './bin/Empty';
 import { Banner } from './bin/Banner';
 import { Help } from './bin/Help';
 import { Repo } from './bin/Repo';
@@ -12,15 +10,13 @@ import '../global.css';
 export const Command = ({ commandInput }) => {
     switch (commandInput) {
         case "":
-            return <Empty />
+            return <div />
         case "help":
             return <Help />
         case "ping":
             return <Ping />
         case "about":
             return <About />
-        case "bash":
-            return <Bash />
         case "banner":
             return <Banner />
         case "repo":
@@ -29,7 +25,9 @@ export const Command = ({ commandInput }) => {
             return <FunFact />
         default:
             return (
-                <div className="command">zsh: command not found: <span style={{ color:"#E82424" }}>{commandInput}</span></div>
+                <div className="command">
+                    Command not found: <span style={{ color:"#E82424" }}>{commandInput}</span>. Run <span style={{ color:"#76946A",  textDecoration:"underline", fontWeight: "bolder" }}>help</span> for a list of available commands.
+                </div>
             )
     }
 };

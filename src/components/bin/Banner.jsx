@@ -1,5 +1,3 @@
-import '../../global.css';
-
 const ascii = [
     "     _________",
     "    / ======= \\                          __",
@@ -16,15 +14,20 @@ const ascii = [
 
 export const Banner = () => {
     return (
-        <div className="command">
+        <div>
             <div>
                 Beginning boot sequence...
             </div>
-            <pre>
+            <pre style={{ color:"#76946A" }}>
                 {ascii}
             </pre>
             <div>
-                Run <span style={{ color:"#76946A",  textDecoration:"underline", fontWeight: "bolder" }}>help</span> to get started.
+                <p style={{ marginBottom:"0px" }}>
+                    Welcome to my terminal.
+                </p>
+                <p style={{ marginBottom:"5px", marginTop:"0px" }}>
+                    Run <span style={{ color:"#76946A",  textDecoration:"underline", fontWeight: "bolder" }}>help</span> to get a list of available commands.
+                </p>
             </div>
         </div>
     );

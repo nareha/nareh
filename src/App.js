@@ -2,26 +2,16 @@ import React, { useRef, useEffect, useState } from 'react';
 import './global.css';
 import Command from './components/Command';
 
-// For command history
+// For command history (up/down arrows)
 let historyLocation = -1;
 
-// For displayed all issued commands and outputs
-const history = [
+/*
+ * For displayed all issued commands and outputs
+ * Not `const` to allow for resetting on a "clear" command
+ */
+let history = [
   <Command commandInput="banner" />
 ];
-
-const AlwaysScrollToBottom = () => {
-  const elementRef = useRef();
-  useEffect(() => elementRef.current.scrollIntoView());
-  return <div ref={elementRef} />;
-};
-
-const Commands = ({ cmds }) => (
-    <div>
-      {history.map(history => <div>{history}</div>)}
-      <AlwaysScrollToBottom />
-    </div>
-);
 
 function App() {
   const [boxValue, setBoxValue] = useState("");
@@ -56,28 +46,41 @@ function App() {
           </div>)
       history.push(<Command commandInput={boxValue} />)
       let fullHistory = commandHistory.concat([boxValue]);
+      if (boxValue === "clear") {
+        history = [];
+      }
       setCommandHistory(fullHistory);
       setBoxValue("");
     }
   }
 
+  /*
+   * References for two purposes:
+   * - Always scroll to the bottom of the overflowed screen when commands are issued
+   * - Always focus on text input
+   */
+  const inputRef = useRef();
+  const inputFocus = () => {
+    inputRef.current.focus();
+  };
+  useEffect(() => inputRef.current.scrollIntoView());
+
   return (
-      <div className="App">
+      <div className="App" onClick={inputFocus}>
         <div className="terminal-container">
-          <Commands cmds={history} />
-          <div>
-            <span style={{ color:"#DCA561" }}>guest</span>@<span style={{ color:"#7E9CD8" }}>nareh.dev</span>:~$ {" "}
-            <input
-                autoFocus
-                className="text-field"
-                type="text"
-                value={boxValue}
-                onKeyDown={inputHandler}
-                onChange={event => {
-                  setBoxValue(event.target.value)
-                }}
-            />
-          </div>
+          {history.map(history => <div>{history}</div>)}
+          <span style={{ color:"#DCA561" }}>guest</span>@<span style={{ color:"#7E9CD8" }}>nareh.dev</span>:~$ {" "}
+          <input
+              autoFocus
+              ref={inputRef}
+              className="text-field"
+              type="text"
+              value={boxValue}
+              onKeyDown={inputHandler}
+              onChange={event => {
+                setBoxValue(event.target.value)
+              }}
+          />
         </div>
       </div>
   );

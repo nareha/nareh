@@ -1,14 +1,14 @@
-/* Color choices are based on Kanagawa */
+/*
+ * Color scheme is based on Kanagawa
+ * Source: https://github.com/rebelot/kanagawa.nvim
+ */
 
 .App {
     background-color: #1F1F28;
-    min-height: 100vh;
     font-size: 17px;
     color: #DCD7BA;
-    display: flex;
-    height: 100%;
-    width: 100%;
     font-family: 'JetBrains Mono', monospace;
+    cursor: text;
 }
 
 .terminal-container {
@@ -33,8 +33,24 @@
     font-family: 'JetBrains Mono', serif;
 }
 
-.command {
-    margin: 10px;
+.wave {
+    animation-name: waving;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+    font-size: 20px;
+}
+
+@keyframes waving {
+    0% { transform: rotate( 0.0deg) }
+    10% { transform: rotate(14.0deg) }
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate( 0.0deg) }
+    100% { transform: rotate( 0.0deg) }
 }
 
 ::selection {
@@ -42,22 +58,6 @@
     color: #1F1F28;
 }
 
-a {
-    color: #76946A;
-}
-
-a:link {
-    color: #76946A;
-}
-
-a:visited {
-    color: #76946A;
-}
-
-a:hover {
-    color: #76946A;
-}
-
-a:active {
+a, a:link, a:visited, a:hover, a:active {
     color: #76946A;
 }
