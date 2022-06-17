@@ -3,7 +3,7 @@ import '../../global.css';
 const ascii = [
     "     _________",
     "    / ======= \\                          __",
-    "   / __________\\      ___  ___ ________ / /",
+    "   / __________\\      ___  ___  _______ / /",
     "  | ___________ |    / _ \\/ _ `/ __/ -_) _ \\",
     "  | | -       | |   /_//_/\\_,_/_/  \\__/_//_/",
     "  | |         | |",
@@ -16,14 +16,14 @@ const ascii = [
 
 export const Banner = () => {
     return (
-        <div>
-            <div className="banner">
+        <div className="command">
+            <div>
                 Beginning boot sequence...
             </div>
             <pre>
                 {ascii}
             </pre>
-            <div className="banner">
+            <div>
                 Run <span style={{ color:"#76946A",  textDecoration:"underline", fontWeight: "bolder" }}>help</span> to get started.
             </div>
         </div>
