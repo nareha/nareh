@@ -1,8 +1,6 @@
 # nareh | Terminal
 a terminal-style personal website.
 
-this website has plans to finish and deploy soon. thank you for your patience.
-
 ### disclaimer
 in its current state, this is not the best code implementation for this website. the hope is to continuously update the site as i learn, and even possibly change technologies.
 
