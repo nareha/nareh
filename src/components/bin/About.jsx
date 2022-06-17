@@ -2,7 +2,7 @@ import '../../global.css';
 
 export const About = () => {
     return (
-        <div style={{ margin:"15px", width:"55%" }}>
+        <div style={{ margin:"20px", width:"55%" }}>
             <p>
                 hiya, welcome to my website! <span className="wave">👋</span>
             </p>

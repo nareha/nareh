@@ -61,3 +61,10 @@
 a, a:link, a:visited, a:hover, a:active {
     color: #76946A;
 }
+
+.cmd {
+    color: #76946A;
+    text-decoration: underline;
+    font-weight: bolder;
+    margin: 0px;
+}

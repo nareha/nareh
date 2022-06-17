@@ -26,7 +26,7 @@ export const Command = ({ commandInput }) => {
         default:
             return (
                 <div className="command">
-                    Command not found: <span style={{ color:"#E82424" }}>{commandInput}</span>. Run <span style={{ color:"#76946A",  textDecoration:"underline", fontWeight: "bolder" }}>help</span> for a list of available commands.
+                    Command not found: <span style={{ color:"#E82424" }}>{commandInput}</span>. Run <span className="cmd">help</span> for a list of available commands.
                 </div>
             )
     }

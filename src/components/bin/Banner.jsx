@@ -1,3 +1,5 @@
+import '../../global.css';
+
 const ascii = [
     "     _________",
     "    / ======= \\                          __",
@@ -8,7 +10,7 @@ const ascii = [
     "  | |_________| |______________________________",
     "  \\=____________/                              )",
     "  / \"\"\"\"\"\"\"\"\"\"\" \\                             /",
-    " / ::::::::::::: \\                        =D-'",
+    " / ::::::::::::: \\                 v1.0.0 =D-'",
     "(_________________)",
 ].join('\n');
 
@@ -26,7 +28,7 @@ export const Banner = () => {
                     Welcome to my terminal.
                 </p>
                 <p style={{ marginBottom:"5px", marginTop:"0px" }}>
-                    Run <span style={{ color:"#76946A",  textDecoration:"underline", fontWeight: "bolder" }}>help</span> to get a list of available commands.
+                    Run <span className="cmd">help</span> to get a list of available commands.
                 </p>
             </div>
         </div>
