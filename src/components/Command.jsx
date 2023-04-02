@@ -8,20 +8,20 @@ import { FunFact } from './bin/FunFact';
 import '../global.css';
 
 export const Command = ({ commandInput }) => {
-    switch (commandInput) {
+    switch (commandInput.toUpperCase()) {
         case "":
             return <div />
-        case "help":
+        case "HELP":
             return <Help />
-        case "ping":
+        case "PING":
             return <Ping />
-        case "about":
+        case "ABOUT":
             return <About />
-        case "banner":
+        case "BANNER":
             return <Banner />
-        case "repo":
+        case "REPO":
             return <Repo />
-        case "funfact":
+        case "FUNFACT":
             return <FunFact />
         default:
             return (
