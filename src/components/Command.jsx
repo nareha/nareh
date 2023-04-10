@@ -8,7 +8,7 @@ import { FunFact } from './bin/FunFact';
 import '../global.css';
 
 export const Command = ({ commandInput }) => {
-    switch (commandInput) {
+    switch (commandInput.toLowerCase()) {
         case "":
             return <div />
         case "help":
