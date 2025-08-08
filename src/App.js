@@ -38,6 +38,12 @@ function App() {
         historyLocation++;
         setBoxValue(commandHistory[historyLocation]);
       }
+    } else if (event.ctrlKey && event.key === 'l') {
+      event.preventDefault();
+      historyLocation = commandHistory.length;
+      history = [];
+      setCommandHistory(commandHistory.slice());
+      setBoxValue(boxValue);
     } else if (event.key === 'Enter') {
       historyLocation = commandHistory.length;
       history.push(
